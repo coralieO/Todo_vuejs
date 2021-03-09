@@ -17,7 +17,10 @@
     },
     methods: {
       sendTask(){
-         this.$emit("sendTask", this.NewTask)
+        if(this.NewTask.length > 0){
+            this.$emit("sendTask", this.NewTask);
+        }
+        this.NewTask = "";
       }
     }
 

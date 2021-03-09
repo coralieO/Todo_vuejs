@@ -10,8 +10,8 @@
   </nav>
 
 </header>
-  <new-todo v-on:sendTask="addTask($event)"/>  <ul v-for="items in tasks" v-bind:key="tasks.indexOf(items)">
-    <todo-list  v-bind:tasks="items.name"></todo-list> </ul>
+  <new-todo v-on:sendTask="addTask($event)"/>  
+    <todo-list v-bind:NewTask="items.name"  v-for="(items, index) in tasks" v-bind:key="index"></todo-list> 
 
 </div>
 
@@ -41,6 +41,7 @@ import TodoList from './TodoList.vue'
       },
       addTask(tasks){
          this.tasks.push({name: tasks, completed:false})
+         console.log(tasks)
       }
     },
    
